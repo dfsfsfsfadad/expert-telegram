@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Майкл Джордан — кратко</title>
+  <style>
+    /* Простой, надёжный стиль */
+    :root{
+      --bg: #071122;
+      --card: #0b2033;
+      --accent: #e63946;
+      --muted: #9fb0c8;
+      --text: #eaf6ff;
+      --radius: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg),#08162a);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:24px;
+    }
+    .wrap{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+    }
+    .photo{
+      width:96px;
+      height:96px;
+      border-radius:8px;
+      overflow:hidden;
+      flex:0 0 96px;
+      background:#0a2030;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:14px;margin-top:6px}
+    .actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+    .btn{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:8px;
+      background:var(--accent);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+    }
+    main{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:16px;
+    }
+    .card{
+      background: rgba(255,255,255,0.02);
+      border-radius:10px;
+      padding:14px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .card h2{margin:0 0 8px 0;font-size:16px}
+    p{margin:8px 0;color:var(--muted)}
+    .stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .stat{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;min-width:100px;text-align:center}
+    .stat strong{display:block;font-size:18px}
+    .quote{font-style:italic;color:#d6eefc;border-left:3px solid rgba(255,255,255,0.04);padding-left:10px;margin-top:8px}
+    aside{display:flex;flex-direction:column;gap:12px}
+    .thumb{height:80px;border-radius:8px;background:linear-gradient(180deg,#051a2b,#08263a);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    footer{margin-top:14px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .small{font-size:13px;color:var(--muted)}
+    @media (max-width:860px){
+      main{grid-template-columns:1fr}
+      .actions{margin-left:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div class="photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Michael_Jordan_in_2014.jpg" alt="Michael Jordan">
+      </div>
+      <div>
+        <h1>Майкл Джордан</h1>
+        <div class="sub">Легендарный баскетболист — 6× чемпион NBA, 5× MVP</div>
+        <div class="small" style="margin-top:6px">Краткая страница — биография, достижения, цитаты</div>
+      </div>
+
+      <div class="actions" aria-hidden="false">
+        <a class="btn" href="#achievements">Достижения</a>
+        <button class="btn" id="printBtn" type="button">Печать</button>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <section class="card" id="bio">
+          <h2>Биография</h2>
+          <p><strong>Майкл Джеффри Джордан</strong> — американский баскетболист, родился 17 февраля 1963 г. В истории НБА известен как один из величайших игроков. Наиболее 유명 за выступления за <em>Chicago Bulls</em>, с которыми он выиграл шесть титулов чемпионов.</p>
+          <p class="small">После карьеры игрока занимался бизнесом и благотворительностью, был владельцем команды.</p>
+        </section>
+
+        <section class="card" id="achievements" style="margin-top:12px">
+          <h2>Достижения</h2>
+          <div class="stats" role="list">
+            <div class="stat" role="listitem"><strong>6</strong><span class="small">Чемпионств NBA</span></div>
+            <div class="stat" role="listitem"><strong>5</strong><span class="small">MVP сезона</span></div>
+            <div class="stat" role="listitem"><strong>14</strong><span class="small">All-Star</span></div>
+            <div class="stat" role="listitem"><strong>10</strong><span class="small">Лучший снайпер</span></div>
+          </div>
+          <p>Джордан известен своими ключевыми бросками и лидерством в важных матчах.</p>
+          <div class="quote">«Я могу принимать неудачу, но не могу принимать то, что даже не пробовал.» — Майкл Джордан</div>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <h2>Игровые качества</h2>
+          <p>- Атлетизм и прыжок<br>- Хладнокровие в конце матчей<br>- Защитная универсальность<br>- Рабочая этика</p>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h2>Краткая сводка</h2>
+          <p><strong>Дата рождения:</strong> 17 февраля 1963</p>
+          <p><strong>Рост:</strong> 198 см</p>
+          <p><strong>Позиция:</strong> Атакующий защитник</p>
+        </div>
+
+        <div class="card">
+          <h2>Галерея</h2>
+          <div class="thumb">Игра 1996</div>
+          <div style="height:8px"></div>
+          <div class="thumb">Кроссовки Air Jordan</div>
+        </div>
+
+        <div class="card">
+          <h2>Ссылки</h2>
+          <p class="small"><a href="https://en.wikipedia.org/wiki/Michael_Jordan" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">Wikipedia</a> — больше информации и статистики</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>Краткая страница о Майкле Джордане</div>
+      <div class="small">Сохрани файл как <strong>michael-jordan.html</strong> и открой в браузере</div>
+    </footer>
+  </div>
+
+  <script>
+    // Простая и безопасная обработка печати
+    (function () {
+      var btn = document.getElementById('printBtn');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          try {
+            window.print();
+          } catch (e) {
+            alert('Печать недоступна: ' + (e && e.message ? e.message : 'ошибка'));
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
